@@ -1,0 +1,40 @@
+{
+  "name": "m365-corporate-agent",
+  "displayName": "Agente M365 Corporativo",
+  "description": "Interface segura com agentes que usam o Microsoft 365 Copilot autenticado via conta corporativa.",
+  "version": "1.0.0",
+  "publisher": "LocalizaCorp",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Reimanel/copilot_corporate_vsix"
+  },
+  "categories": [
+    "Other"
+  ],
+  "extensionDependencies": [
+    "ms-vscode.microsoft-authentication"
+  ],
+  "activationEvents": [
+    "onCommand:m365-corporate-agent.start"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "m365-corporate-agent.start",
+        "title": "Iniciar Agente M365 Corporativo"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package",
+    "install-deps": "npm install"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.22.0"
+  }
+}
+
