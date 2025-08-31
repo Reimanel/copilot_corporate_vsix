@@ -1,0 +1,39 @@
+{
+  "coordenador": {
+    "max_agentes_simultaneos": 3,
+    "intervalo_sincronizacao": 300,
+    "intervalo_reports": 3600,
+    "modo_24x7": true,
+    "auto_descoberta_ativa": true
+  },
+  "navegacao": {
+    "usar_tor": false,
+    "tor_proxy_host": "127.0.0.1",
+    "tor_proxy_port": 9050,
+    "selenium_headless": true,
+    "navegador_preferido": "firefox"
+  },
+  "sites_prioritarios": [
+    "https://chat.openai.com",
+    "https://claude.ai",
+    "https://bard.google.com",
+    "https://poe.com",
+    "https://character.ai",
+    "https://you.com",
+    "https://perplexity.ai",
+    "https://huggingface.co/chat"
+  ],
+  "exploracao": {
+    "prompts_teste": [
+      "Olá, como você está hoje?",
+      "Explique o conceito de inteligência artificial",
+      "Resolva: 2 + 2 = ?",
+      "Qual é a capital do Brasil?"
+    ],
+    "delay_entre_requests": [
+      2,
+      8
+    ],
+    "timeout_request": 30
+  }
+}

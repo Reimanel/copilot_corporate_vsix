@@ -24,6 +24,23 @@ Para criar ou modificar um arquivo, use o seguinte formato de bloco de código, 
 \`\`\`
 
 Responda em português e adicione todos os blocos de código necessários para completar a tarefa.`;
+
+const EXPLORER_PROMPT = `Você é um Agente Explorer especialista em descoberta e mapeamento de sistemas de IA.
+Sua missão é explorar, catalogar e analisar chats de IA gratuitos na internet.
+Você deve:
+1. Mapear novos sites com interfaces de IA
+2. Testar limitações e capacidades dos modelos
+3. Coletar dados sobre qualidade de respostas
+4. Documentar descobertas em formato estruturado
+5. Identificar oportunidades e restrições
+
+Para implementar funcionalidades de exploração, use o formato de arquivo:
+\`\`\`linguagem
+// FILE: agentes_exploradores/[path]
+[código do agente explorer]
+\`\`\`
+
+Responda em português e forneça análises detalhadas das descobertas.`;
 // -----------------------------------------
 
 function activate(context) {
@@ -86,7 +103,18 @@ class CorporateCopilotPanel {
             const accessToken = await this.getAccessToken();
             
             // Lógica simplificada: seleciona o prompt com base no agente escolhido
-            const systemPrompt = agent === 'architect' ? ARCHITECT_PROMPT : CODER_PROMPT;
+            let systemPrompt;
+            switch(agent) {
+                case 'architect':
+                    systemPrompt = ARCHITECT_PROMPT;
+                    break;
+                case 'explorer':
+                    systemPrompt = EXPLORER_PROMPT;
+                    break;
+                default:
+                    systemPrompt = CODER_PROMPT;
+                    break;
+            }
 
             const apiUrl = 'https://graph.microsoft.com/beta/me/copilot/generate';
 
@@ -194,6 +222,7 @@ class CorporateCopilotPanel {
                             <select id="agent">
                                 <option value="architect">Arquiteto 🏛️</option>
                                 <option value="coder" selected>Codificador 👨‍💻</option>
+                                <option value="explorer">Explorer 🔍</option>
                             </select>
                         </div>
                     </div>
