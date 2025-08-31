@@ -1,0 +1,66 @@
+# Dependências principais do sistema de agentes exploradores
+aiohttp>=3.9.0
+requests>=2.31.0
+selenium>=4.15.0
+asyncio-mqtt>=0.13.0
+
+# Para processamento de dados
+pandas>=2.1.0
+numpy>=1.24.0
+
+# Para logging e monitoramento
+structlog>=23.1.0
+
+# Para configuração
+python-dotenv>=1.0.0
+pyyaml>=6.0
+
+# Para análise de HTML/texto
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# Para requests com retry
+urllib3>=2.0.0
+
+# Para navegação anônima (Tor)
+pysocks>=1.7.1
+stem>=1.8.0
+
+# Para processamento assíncrono
+asyncio>=3.4.3
+
+# Para análise de URLs e domínios
+tldextract>=5.0.0
+validators>=0.22.0
+
+# Para compressão de dados
+gzip
+zipfile36>=0.1.3
+
+# Para análise de JSON
+jsonschema>=4.19.0
+
+# Para detecção de idiomas (opcional)
+langdetect>=1.0.9
+
+# Para análise de conteúdo web
+readability-lxml>=0.8.1
+
+# Para manipulação de datas
+python-dateutil>=2.8.2
+
+# Para expressões regulares avançadas
+regex>=2023.8.8
+
+# Browsers drivers (necessário instalar separadamente)
+# webdriver-manager>=4.0.0
+
+# Para criptografia básica
+cryptography>=41.0.0
+
+# Para monitoramento de sistema
+psutil>=5.9.0
+
+# Para API HTTP simples (opcional para interface web)
+fastapi>=0.103.0
+uvicorn>=0.23.0
